@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik'
-import AK from '~/../public/AK.png'
+import AK from '/AK.png'
 import Menu from '~/components/menu/menu'
 
 export default component$(() => {

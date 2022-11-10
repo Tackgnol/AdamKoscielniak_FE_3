@@ -58,3 +58,16 @@
 ::before {
   box-sizing: border-box;
 }
+
+.projects__show {
+  opacity: 1;
+  transition: opacity 0.2s;
+  transform: translateX(0px);
+}
+
+.projects__hidden {
+  opacity: 0;
+
+  transform: translateX(-400px);
+  transition: opacity 0.2s ease-out;
+}

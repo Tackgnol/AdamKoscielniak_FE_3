@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik'
-import Me from '~/../public/Adam.png'
-import Signature from '~/../public/Signature.png'
+import Me from '/Adam.png'
+import Signature from './Signature.png'
 
 export default component$(() => (
     <div class="bg-white font-black text-center flex flex-col mt-3 text-gray-300">
