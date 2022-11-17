@@ -54,3 +54,8 @@ export interface Count {
     name: string
     count: number
 }
+
+export interface LoginCookie {
+    token: string
+    refreshToken: string
+}

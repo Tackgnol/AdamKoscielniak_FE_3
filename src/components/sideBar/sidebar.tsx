@@ -14,9 +14,9 @@ export default component$<SidebarProps>(({ text, onClick$, icon }) => (
                 onClick$()
             }}
         >
-            <div class="rotate-90 flex justify-between">
+            <div class=" flex justify-between">
                 <i class={icon} />
-                <span>{text}</span>
+                <span class="rotate-90">{text}</span>
                 <i class={icon} />
             </div>
         </div>
