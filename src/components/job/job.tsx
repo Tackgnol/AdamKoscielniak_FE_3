@@ -20,6 +20,7 @@ export default component$<JobProps>(
                     }}
                     sideText="Projects"
                     showSidebar={Projects.length > 0}
+                    open={store.show}
                 >
                     <div class="italic text-2xl text-gray-400">{Position}</div>
                     <Responsibilities responsibilities={Res} />

@@ -7,6 +7,7 @@ interface CardProps {
     onClick$?: PropFunction<() => void>
     sideText?: string
     showSidebar?: boolean
+    open?: boolean
 }
 
 export default component$<CardProps>(
@@ -16,6 +17,7 @@ export default component$<CardProps>(
         onClick$,
         sideText = 'Click me!',
         showSidebar = false,
+        open = false,
     }) => (
         <div class="flex flex-row">
             <div
@@ -33,15 +35,15 @@ export default component$<CardProps>(
             </div>
             {showSidebar && (
                 <div
-                    className="flex bg-black text-white cursor-pointer rounded-r-2xl h-[97.5%] z-40"
+                    className="project__link flex bg-black text-white cursor-pointer rounded-r-2xl h-[97.5%] z-40"
                     onClick$={() => {
                         onClick$ && onClick$()
                     }}
                 >
-                    <div className="flex flex-col justify-evenly items-center">
-                        <ArrowRight />
+                    <div className="flex flex-col justify-evenly items-center btn-text">
+                        <ArrowRight morphed={open} />
                         <span class="rotate-90 ">{sideText}</span>
-                        <ArrowRight />
+                        <ArrowRight morphed={open} />
                     </div>
                 </div>
             )}
