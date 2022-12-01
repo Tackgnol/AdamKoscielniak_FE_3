@@ -15,7 +15,7 @@ export default component$(() => {
      *
      * Dont remove the `<head>` and `<body>` elements.
      */
-    useStyles$(globalStyles)
+    useStyles$(String(globalStyles))
 
     return (
         <QwikCity>

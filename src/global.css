@@ -1,6 +1,9 @@
+@import url("components/accordion/arrodeon.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 .point {
   position: relative;
@@ -14,16 +17,7 @@
   display: inline-block;
   width: 26px;
   height: 26px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-top-right-radius: 50%;
-  -o-border-top-left-radius: 50%;
-  -o-border-bottom-right-radius: 50%;
-  -o-border-bottom-left-radius: 50%;
   border-radius: 50%;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   background: white;
 }
@@ -36,16 +30,6 @@
   display: inline-block;
   width: 14px;
   height: 14px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-top-right-radius: 50%;
-  -ms-border-top-left-radius: 50%;
-  -ms-border-bottom-right-radius: 50%;
-  -ms-border-bottom-left-radius: 50%;
-  -o-border-top-right-radius: 50%;
-  -o-border-top-left-radius: 50%;
-  -o-border-bottom-right-radius: 50%;
-  -o-border-bottom-left-radius: 50%;
   border-radius: 50%;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
@@ -79,11 +63,11 @@
 .project__link::before {
   transition: all 0.85s cubic-bezier(0.1, -1.55, 0.265, 1.55);
   content: '';
-  width: 0%;
+  width: 0;
   height: 100%;
   background: black;
   position: absolute;
-  top: 0%;
+  top: 0;
   left: 0;
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
@@ -109,37 +93,54 @@
 }
 
 .morphArrow {
-  animation: animation-1-before-reverse 1s;;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-block;
+  position: relative;
+  margin: 0 1rem;
 }
-
-.normal path{
-  d:path('M0 256C0 397.4 114.6 512 256 512s256-114.6 256-256S397.4 0 256 0S0 114.6 0 256zM297 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L120 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l214.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L409 239c9.4 9.4 9.4 24.6 0 33.9L297 385z');
+.morphArrow.left span:nth-child(4) {
+  transform: rotate(-45deg);
 }
-
-.reversed path{
-  d:path('M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256S114.6 512 256 512s256-114.6 256-256zM215 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L392 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-214.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L103 273c-9.4-9.4-9.4-24.6 0-33.9L215 127z');
+.morphArrow.left span:nth-child(5) {
+  transform: rotate(45deg);
 }
-
-@keyframes animation-1-before-reverse {
-  0% {
-    left: -3px;
-    bottom: -4px;
-    transform: rotate(-135deg);
-    height: 3px;
-    width: 15px;
-    background: #fff;
-  }
-
-  50% {
-    width: 3px;
-    border-radius: 50%;
-    bottom: -20px;
-    left: 15px;
-  }
-
-  100% {
-    right: -3px;
-    bottom: -4px;
-    transform: rotate(-45deg);
-  }
+.morphArrow.right span:nth-child(1) {
+  transform: rotate(-45deg);
+}
+.morphArrow.right span:nth-child(2) {
+  transform: rotate(45deg);
+}
+.morphArrow span {
+  position: absolute;
+  height: 0.1rem;
+  background-color: #efefef;
+  transition: transform 0.2s ease;
+}
+.morphArrow span:nth-child(1),
+.morphArrow span:nth-child(2),
+.morphArrow span:nth-child(4),
+.morphArrow span:nth-child(5) {
+  width: 0.625rem;
+  top: 0.625rem;
+}
+.morphArrow span:nth-child(1) {
+  right: 0;
+  transform-origin: bottom right;
+}
+.morphArrow span:nth-child(2) {
+  right: 0;
+  transform-origin: top right;
+}
+.morphArrow span:nth-child(3) {
+  width: 1.25rem;
+  top: 0.625rem;
+}
+.morphArrow span:nth-child(4) {
+  left: 0;
+  transform-origin: bottom left;
+}
+.morphArrow span:nth-child(5) {
+  left: 0;
+  transform-origin: top left;
 }

@@ -10,7 +10,7 @@ interface ProjectProps extends Project {
 export default component$<ProjectProps>(
     ({ Title, Role, Result, Description, show = true, delay }) => (
         <div
-            class={`${show ? 'projects__show' : ' projects__hidden'}`}
+            class={`${show ? 'projects__show' : ' projects__hidden'} flex-wrap`}
             style={
                 typeof delay !== 'undefined'
                     ? {

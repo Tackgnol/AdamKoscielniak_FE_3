@@ -22,6 +22,7 @@ export default component$(() => (
                 Role="Developer"
                 Description="Creating a Discord.js bot to help run Vampire the Masquarade games. Support narration events, skill tests, player messaging"
                 Result="In progress"
+                show={true}
             />
         </div>
     </div>

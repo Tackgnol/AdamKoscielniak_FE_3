@@ -1,5 +1,5 @@
 import { component$, PropFunction, Slot } from '@builder.io/qwik'
-import ArrowRight from '~/components/icons/arrow-right'
+import MorphArrow from '~/components/icons/morphArrow'
 
 interface CardProps {
     title: string
@@ -23,7 +23,7 @@ export default component$<CardProps>(
             <div
                 class={`min-h-[300px] w-96 border border-neutral-400 ${
                     showSidebar ? 'rounded-l-2xl' : 'rounded-2xl'
-                } p-7 ml-4 mb-2 flex flex-col`}
+                } p-7 ml-4 mb-2 flex flex-col h-fit`}
             >
                 {subTitle && (
                     <div class="text-lg text-gray-300 font-mono">
@@ -35,15 +35,15 @@ export default component$<CardProps>(
             </div>
             {showSidebar && (
                 <div
-                    className="project__link flex bg-black text-white cursor-pointer rounded-r-2xl h-[97.5%] z-40"
+                    className="project__link flex bg-black text-white cursor-pointer rounded-r-2xl z-40"
                     onClick$={() => {
                         onClick$ && onClick$()
                     }}
                 >
                     <div className="flex flex-col justify-evenly items-center btn-text">
-                        <ArrowRight morphed={open} />
+                        <MorphArrow active={open} />
                         <span class="rotate-90 ">{sideText}</span>
-                        <ArrowRight morphed={open} />
+                        <MorphArrow active={open} />
                     </div>
                 </div>
             )}

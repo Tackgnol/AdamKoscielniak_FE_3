@@ -7,33 +7,34 @@ import Clock from '~/components/icons/clock'
 import Ul from '~/components/icons/ul'
 import File from '~/components/icons/file'
 import { JSX } from '@builder.io/qwik/jsx-runtime'
+import { IconProps } from '~/models/props'
 
-export const getIcon = (prompt: string) => {
+export const getIcon = (prompt: string, props?: IconProps) => {
     let component: JSX.Element = <div />
     switch (prompt) {
         case 'fa-running':
-            component = <Running />
+            component = <Running {...props} />
             break
         case 'fa-dice-d20':
-            component = <D20 />
+            component = <D20 {...props} />
             break
         case 'fa-puzzle-piece':
-            component = <Puzzle />
+            component = <Puzzle {...props} />
             break
         case 'fa-compact-disc':
-            component = <Disc />
+            component = <Disc {...props} />
             break
         case 'fa-medal':
-            component = <Medal />
+            component = <Medal {...props} />
             break
         case 'fa-clock':
-            component = <Clock />
+            component = <Clock {...props} />
             break
         case 'fa-list-ul':
-            component = <Ul />
+            component = <Ul {...props} />
             break
         case 'fa-file-alt':
-            component = <File />
+            component = <File {...props} />
             break
     }
     return component

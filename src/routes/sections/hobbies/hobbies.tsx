@@ -21,7 +21,9 @@ export default component$(() => {
                         <div className="flex flex-row justify-between flex-wrap mx-auto">
                             {hobbies &&
                                 hobbies.map((h) => {
-                                    const icon = getIcon(h.FAIcon)
+                                    const icon = getIcon(h.FAIcon, {
+                                        color: '#000',
+                                    })
                                     return (
                                         <Hobby
                                             title={h.Name}

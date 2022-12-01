@@ -14,7 +14,7 @@ export default component$(() => {
     })
 
     return (
-        <div class="container py-9 m-auto">
+        <div class="container py-9 m-auto flex flex-col ">
             <Title title="My experience" />
             <Resource
                 value={jobsResource}
