@@ -8,26 +8,12 @@ interface ProjectProps extends Project {
 }
 
 export default component$<ProjectProps>(
-    ({ Title, Role, Result, Description, show = true, delay }) => (
-        <div
-            class={`${show ? 'projects__show' : ' projects__hidden'} flex-wrap`}
-            style={
-                typeof delay !== 'undefined'
-                    ? {
-                          transition: `all ${(delay + 1) * 0.25}s;`,
-                      }
-                    : {}
-            }
-        >
-            <Card subTitle={Role} title={Title}>
-                <div class="font-bold my-1">Project description</div>
-                <div
-                    class="text-justify"
-                    dangerouslySetInnerHTML={Description}
-                />
-                <div class="font-bold my-1">Result</div>
-                <div dangerouslySetInnerHTML={Result} />
-            </Card>
-        </div>
+    ({ Title, Role, Result, Description }) => (
+        <Card subTitle={Role} title={Title}>
+            <div class="font-bold my-1">Project description</div>
+            <div class="text-justify" dangerouslySetInnerHTML={Description} />
+            <div class="font-bold my-1">Result</div>
+            <div dangerouslySetInnerHTML={Result} />
+        </Card>
     )
 )
