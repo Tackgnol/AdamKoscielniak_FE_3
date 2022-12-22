@@ -5,7 +5,7 @@ import LinkedIn from '~/components/icons/linkedIn'
 
 export default component$(() => (
     <footer>
-        <div class="container py-9 m-auto flex flex-row  ml-16 min-h-[80px] w-full justify-around ">
+        <div class="container m-auto flex flex-row min-h-[80px] w-full justify-around ">
             <div class="flex">
                 <span class="my-auto">
                     © 2022 Made by Adam Kościelniak&nbsp;

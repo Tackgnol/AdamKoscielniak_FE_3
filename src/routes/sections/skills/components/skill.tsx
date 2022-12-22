@@ -8,7 +8,7 @@ interface SkillProps {
 }
 
 export default component$<SkillProps>(({ Name, Skills }) => (
-    <div class="w-5/12 mx-7">
+    <div class="lg:w-5/12 w-full mx-7">
         <div class="font-serif text-3xl font-extrabold uppercase font-mono">
             {Name}
         </div>

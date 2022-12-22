@@ -12,8 +12,8 @@ export default component$(() => {
         return fetcher.getAll<School>()
     })
     return (
-        <div class="bg-gray-100 pt-9">
-            <div class="container m-auto">
+        <div class="bg-gray-100 py-5">
+            <div class="m-auto">
                 <Title title="My education" />
                 <Resource
                     value={eduResource}

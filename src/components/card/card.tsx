@@ -1,29 +1,35 @@
 import { component$, PropFunction, Slot } from '@builder.io/qwik'
-import MorphArrow from '~/components/icons/morphArrow'
+import MorphArrow from '~/components/icons/morphArrowLR'
+
+type sideBarPosition = 'bottom' | 'right'
 
 interface CardProps {
     title: string
     subTitle?: string
     onClick$?: PropFunction<() => void>
     sideText?: string
-    showSidebar?: boolean
+    sidebar?: sideBarPosition
     open?: boolean
 }
-
+// TODO: Clean this up, add a getSidebar styles function and move sidebar to a separate component
 export default component$<CardProps>(
     ({
         title,
         subTitle,
         onClick$,
         sideText = 'Click me!',
-        showSidebar = false,
+        sidebar,
         open = false,
     }) => (
-        <div class="flex flex-row">
+        <div class={`flex ${sidebar === 'bottom' ? 'flex-col' : 'flex-row'}`}>
             <div
-                class={`min-h-[300px] w-96 border border-neutral-400 ${
-                    showSidebar ? 'rounded-l-2xl' : 'rounded-2xl'
-                } p-7 ml-4 mb-2 flex flex-col h-fit`}
+                class={`min-h-[300px] lg:w-96 w-full border border-neutral-400 ${
+                    sidebar
+                        ? sidebar === 'right'
+                            ? 'rounded-l-2xl'
+                            : 'rounded-t-2xl'
+                        : 'rounded-2xl'
+                } p-7 flex flex-col h-fit`}
             >
                 {subTitle && (
                     <div class="text-lg text-gray-300 font-mono">
@@ -33,16 +39,26 @@ export default component$<CardProps>(
                 <div class="text-lg font-bold font-mono">{title}</div>
                 <Slot />
             </div>
-            {showSidebar && (
+            {sidebar && (
                 <div
-                    className="project__link flex bg-black text-white cursor-pointer rounded-r-2xl z-40"
+                    className={`project__link flex bg-black text-white cursor-pointer ${
+                        sidebar === 'right' ? 'rounded-r-2xl' : 'rounded-b-2xl'
+                    } z-40`}
                     onClick$={() => {
                         onClick$ && onClick$()
                     }}
                 >
-                    <div className="flex flex-col justify-evenly items-center btn-text">
+                    <div
+                        className={`flex ${
+                            sidebar === 'right' ? 'flex-col' : 'flex-row'
+                        } justify-evenly items-center btn-text flex-grow`}
+                    >
                         <MorphArrow active={open} />
-                        <span class="rotate-90 ">{sideText}</span>
+                        <span
+                            class={`${sidebar === 'right' ? 'rotate-90' : ''}`}
+                        >
+                            {sideText}
+                        </span>
                         <MorphArrow active={open} />
                     </div>
                 </div>

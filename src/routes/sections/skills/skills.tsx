@@ -11,7 +11,7 @@ export default component$(() => {
     })
 
     return (
-        <div className="container m-auto py-9">
+        <div className="m-auto py-9">
             <Title title="My skills" />
             <Resource
                 value={skillResource}

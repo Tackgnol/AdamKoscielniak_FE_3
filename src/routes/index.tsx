@@ -12,7 +12,7 @@ import Cv from '~/routes/sections/CV/cv'
 
 export default component$(() => {
     return (
-        <>
+        <div class="m-auto overflow-hidden">
             <Hello />
             <About />
             <Overview />
@@ -22,7 +22,7 @@ export default component$(() => {
             <Skills />
             <Hobbies />
             <Cv />
-        </>
+        </div>
     )
 })
 

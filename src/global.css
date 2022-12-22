@@ -1,4 +1,5 @@
-@import url("components/accordion/arrodeon.css");
+@import url("components/horizontalAccordion/arrodeon.css");
+
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +13,7 @@
 .point:before {
   content: '';
   position: absolute;
-  left: -42px;
+  left: -34px;
   top: 70px;
   display: inline-block;
   width: 26px;
@@ -25,7 +26,7 @@
 .point:after {
   content: '';
   position: absolute;
-  left: -36px;
+  left: -29px;
   top: 76px;
   display: inline-block;
   width: 14px;
@@ -99,6 +100,8 @@
   position: relative;
   margin: 0 1rem;
 }
+
+
 .morphArrow.left span:nth-child(4) {
   transform: rotate(-45deg);
 }
@@ -111,6 +114,20 @@
 .morphArrow.right span:nth-child(2) {
   transform: rotate(45deg);
 }
+
+.morphArrow.top span:nth-child(4) {
+  transform: rotate(-90deg);
+}
+.morphArrow.top span:nth-child(5) {
+  transform: rotate(90deg);
+}
+.morphArrow.bottom span:nth-child(1) {
+  transform: rotate(-90deg);
+}
+.morphArrow.bottom span:nth-child(2) {
+  transform: rotate(90deg);
+}
+
 .morphArrow span {
   position: absolute;
   height: 0.1rem;
@@ -143,4 +160,58 @@
 .morphArrow span:nth-child(5) {
   left: 0;
   transform-origin: top left;
+}
+
+
+.morphArrowTB {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-block;
+  position: relative;
+  margin: 0 1rem;
+}
+.morphArrowTB span {
+  top: 0.5rem;
+  position: absolute;
+  width: 0.75rem;
+  height: 0.1rem;
+  background-color: #efefef;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+.morphArrowTB span:first-of-type {
+  left: 0;
+  transform: rotate(45deg);
+}
+.morphArrowTB span:last-of-type {
+  right: 0;
+  transform: rotate(-45deg);
+}
+.morphArrowTB.active span:first-of-type {
+  transform: rotate(-45deg);
+}
+.morphArrowTB.active span:last-of-type {
+  transform: rotate(45deg);
+}
+
+
+ul {
+  padding-left: 20px;
+  list-style-type: circle;
+}
+
+.under {
+  background: white;
+  mix-blend-mode: screen;
+}
+
+.section {
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  height: auto;
+  flex: 1;
+}
+
+.section.collapsed {
+  flex: 0;
 }

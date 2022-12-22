@@ -1,5 +1,5 @@
 import { component$, PropFunction } from '@builder.io/qwik'
-import MorphArrow from '~/components/icons/morphArrow'
+import MorphArrow from '~/components/icons/morphArrowLR'
 
 interface SidebarProps {
     onClick$: PropFunction<() => void>

@@ -8,7 +8,7 @@ interface ProjectProps extends Project {
 }
 
 export default component$<ProjectProps>(
-    ({ Title, Role, Result, Description }) => (
+    ({ Result, Description, Role, Title }) => (
         <Card subTitle={Role} title={Title}>
             <div class="font-bold my-1">Project description</div>
             <div class="text-justify" dangerouslySetInnerHTML={Description} />

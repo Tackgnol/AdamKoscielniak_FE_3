@@ -6,6 +6,7 @@ import { BaseService } from '~/services/base'
 import Entry from '~/components/timeline/entry'
 import Job from '~/components/job/job'
 import { Job as JobModel } from '~/models/dto'
+import JobSM from '~/components/job/jobSM'
 
 export default component$(() => {
     const jobsResource = useResource$<JobModel[]>(async () => {
@@ -14,7 +15,7 @@ export default component$(() => {
     })
 
     return (
-        <div class="container py-9 m-auto flex flex-col ">
+        <div class="mx-auto flex flex-col min-h-[200px] my-4">
             <Title title="My experience" />
             <Resource
                 value={jobsResource}
@@ -24,7 +25,12 @@ export default component$(() => {
                             {jobs &&
                                 jobs.map((e) => (
                                     <Entry>
-                                        <Job {...e} />
+                                        <div class="hidden xl:flex 2xl:flex lg:flex">
+                                            <Job {...e} />
+                                        </div>
+                                        <div class="flex xl:hidden 2xl:hidden lg:hidden">
+                                            <JobSM {...e} />
+                                        </div>
                                     </Entry>
                                 ))}
                         </Timeline>

@@ -12,13 +12,13 @@ export default component$(() => {
     })
 
     return (
-        <div class=" bg-gray-100 py-9">
-            <div className="container m-auto">
+        <div class="bg-gray-100 py-9">
+            <div className="m-auto">
                 <Title title="My hobbies" />
                 <Resource
                     value={hobbyResource}
                     onResolved={(hobbies) => (
-                        <div className="flex flex-row justify-between flex-wrap mx-auto">
+                        <div className="flex flex-row flex-wrap mx-auto justify-center">
                             {hobbies &&
                                 hobbies.map((h) => {
                                     const icon = getIcon(h.FAIcon, {
