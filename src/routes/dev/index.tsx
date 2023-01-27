@@ -14,7 +14,24 @@ export default component$(() => {
     return (
         <div class="container m-auto w-96 h-96 pt-9">
             <ZipCard firstHeader="Projects" secondHeader="Info">
+                <div q:slot="static">SII Polska</div>
                 <div q:slot="first">
+                    <div className="lg:w-96 w-full p-7 flex flex-col">
+                        <div className="text-lg font-bold font-mono">GFT</div>
+                        <div className="italic text-2xl text-gray-400">
+                            Experienced Software Engineer
+                        </div>
+
+                        <ul className="list-disc list-inside mt-1">
+                            <li className="m-1">React Developer</li>
+                            <li className="m-1">Python Developer</li>
+                            <li className="m-1">
+                                Managing the cloud build of the front end
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div q:slot="second">
                     <Accordion>
                         <AccordionCard
                             onChange$={handleChange$}
@@ -77,22 +94,6 @@ export default component$(() => {
                             <div q:slot="text">{`Projects`}</div>
                         </AccordionCard>
                     </Accordion>
-                </div>
-                <div q:slot="second">
-                    <div className="lg:w-96 w-full p-7 flex flex-col">
-                        <div className="text-lg font-bold font-mono">GFT</div>
-                        <div className="italic text-2xl text-gray-400">
-                            Experienced Software Engineer
-                        </div>
-
-                        <ul className="list-disc list-inside mt-1">
-                            <li className="m-1">React Developer</li>
-                            <li className="m-1">Python Developer</li>
-                            <li className="m-1">
-                                Managing the cloud build of the front end
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </ZipCard>
         </div>

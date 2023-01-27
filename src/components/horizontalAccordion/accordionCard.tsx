@@ -34,7 +34,7 @@ export default component$<AccordionCardProps>(
                     </div>
                     <div class="content flex justify-center">
                         <div class="opacity-0 relative transform transition-base translate-x-8 ">
-                            <div class="absolute flex-grow w-96">
+                            <div class="absolute flex-grow w-80">
                                 <Slot name="contents" />
                             </div>
                         </div>

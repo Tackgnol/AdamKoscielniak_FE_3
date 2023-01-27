@@ -7,7 +7,7 @@ export default component$(() => (
         <div class="text-black text-2xl text-center mb-4 font-mono">
             My current work
         </div>
-        <div class="flex justify-center m-auto flex-wrap">
+        <div class="md:w-3/4 w-full flex justify-center m-auto gap-5">
             <Job
                 Id={1}
                 time="Aug 1, 2021 - Now"

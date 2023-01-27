@@ -11,28 +11,29 @@ interface JobProps extends Job {}
 export default component$<JobProps>(
     ({ Responsibilities: Res, Skills, time, Position, Employer, Projects }) => {
         return (
-            <div class="flex flex-row h-96 w-full">
-                <div class="flex h-full w-full z-30 under">
-                    <ZipCard firstHeader="Info" secondHeader="Projects">
-                        <div class="h-full w-full" q:slot="first">
-                            <Card
-                                title={Employer}
-                                subTitle={time}
-                                sideText="Projects"
-                            >
-                                <div class="italic text-2xl text-gray-400">
-                                    {Position}
-                                </div>
-                                <Responsibilities responsibilities={Res} />
+            <div class="flex w-full flex-grow ">
+                <ZipCard
+                    firstHeader="Projects"
+                    secondHeader={Projects.length ? 'Info' : undefined}
+                >
+                    <div class="w-full" q:slot="first">
+                        <Card
+                            title={Employer}
+                            subTitle={time}
+                            sideText="Projects"
+                        >
+                            <div class="italic text-2xl text-gray-400">
+                                {Position}
+                            </div>
+                            <Responsibilities responsibilities={Res} />
 
-                                <Tags tags={Skills} />
-                            </Card>
-                        </div>
-                        <div class="h-full w-full" q:slot="second">
-                            <ProjectsSM projects={Projects} show={true} />
-                        </div>
-                    </ZipCard>
-                </div>
+                            <Tags tags={Skills} />
+                        </Card>
+                    </div>
+                    <div class=" w-full" q:slot="second">
+                        <ProjectsSM projects={Projects} show={true} />
+                    </div>
+                </ZipCard>
             </div>
         )
     }

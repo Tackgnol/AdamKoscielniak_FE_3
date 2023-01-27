@@ -16,7 +16,7 @@ export default component$<AccordionCardProps>(
 
         return (
             <button
-                className={`group border border-black focus:outline-none ${
+                className={`min-h-14 border border-black focus:outline-none ${
                     active
                         ? 'bg-gray-400 cursor-auto'
                         : 'bg-gray-900 cursor-pointer'
@@ -30,8 +30,7 @@ export default component$<AccordionCardProps>(
                     <Slot name="icon" />
                 </div>
                 <div
-                    className={`max-h-0 overflow-hidden duration-300 ${
-                        active ? 'max-h-96' : ''
+                    className={`max-h-0 overflow-hidden transition-all duration-3"max-h-giant"   ""             active ? 'max-h-giant' : ''
                     } bg-white`}
                 >
                     <Slot name="contents" />

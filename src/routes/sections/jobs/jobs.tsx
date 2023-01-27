@@ -15,7 +15,7 @@ export default component$(() => {
     })
 
     return (
-        <div class="mx-auto flex flex-col min-h-[200px] my-4">
+        <div class="mx-auto container flex flex-col h-full w-full my-4">
             <Title title="My experience" />
             <Resource
                 value={jobsResource}
@@ -24,14 +24,16 @@ export default component$(() => {
                         <Timeline>
                             {jobs &&
                                 jobs.map((e) => (
-                                    <Entry>
-                                        <div class="hidden xl:flex 2xl:flex lg:flex">
-                                            <Job {...e} />
-                                        </div>
-                                        <div class="flex xl:hidden 2xl:hidden lg:hidden">
+                                    <>
+                                        <Entry>
+                                            <div class="hidden w-full xl:flex 2xl:flex lg:flex">
+                                                <Job {...e} />
+                                            </div>
+                                        </Entry>
+                                        <div class="flex w-full xl:hidden 2xl:hidden lg:hidden">
                                             <JobSM {...e} />
                                         </div>
-                                    </Entry>
+                                    </>
                                 ))}
                         </Timeline>
                     )

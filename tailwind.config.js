@@ -10,6 +10,12 @@ module.exports = {
             minWidth: {
                 14: '3.5rem',
             },
+            maxHeight: {
+                giant: '3000px',
+            },
+            minHeight: {
+                14: '3.5rem',
+            },
         },
     },
     plugins: [],

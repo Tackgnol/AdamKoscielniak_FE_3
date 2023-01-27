@@ -17,7 +17,7 @@ export default component$<ProjectProps>(({ projects, show }) => {
                 show
                     ? 'opacity-100 translate-x-0'
                     : 'opacity-0 -translate-x-3/4'
-            } w-full 2xl:w-1/2 z-0`}
+            } w-full flex-grow 2xl:w-1/2 z-0`}
         >
             <Accordion>
                 {projects &&
@@ -30,7 +30,7 @@ export default component$<ProjectProps>(({ projects, show }) => {
                         >
                             <div
                                 q:slot="contents"
-                                class="transform transition-base"
+                                class="transform transition-base p-3"
                             >
                                 <>
                                     <div className="font-bold my-1">

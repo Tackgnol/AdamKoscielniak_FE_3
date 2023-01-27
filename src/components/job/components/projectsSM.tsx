@@ -11,7 +11,7 @@ export default component$<ProjectProps>(({ projects }) => {
     })
 
     return (
-        <div class="container m-auto w-96 h-96 pt-9">
+        <div class="flex m-auto w-full">
             <Accordion>
                 {projects &&
                     projects.map((p) => (
@@ -20,15 +20,18 @@ export default component$<ProjectProps>(({ projects }) => {
                             active={active.value === p.Title}
                             panelId={p.Title}
                         >
-                            <div className="font-bold my-1">
-                                Project description
+                            <div q:slot="text">{p.Title}</div>
+                            <div q:slot="contents" class="p-3">
+                                <div className="font-bold">
+                                    Project description
+                                </div>
+                                <div
+                                    className="text-justify"
+                                    dangerouslySetInnerHTML={p.Description}
+                                />
+                                <div className="font-bold p-1">Result</div>
+                                <div dangerouslySetInnerHTML={p.Result} />
                             </div>
-                            <div
-                                className="text-justify"
-                                dangerouslySetInnerHTML={p.Description}
-                            />
-                            <div className="font-bold my-1">Result</div>
-                            <div dangerouslySetInnerHTML={p.Result} />
                         </AccordionCard>
                     ))}
             </Accordion>

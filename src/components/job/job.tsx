@@ -11,7 +11,7 @@ export default component$<JobProps>(
     ({ Responsibilities: Res, Skills, time, Position, Employer, Projects }) => {
         const store = useStore({ show: false })
         return (
-            <div class="flex flex-row">
+            <div class="flex flex-row w-full justify-between">
                 <div class="flex z-30 under">
                     <Card
                         title={Employer}
@@ -31,7 +31,9 @@ export default component$<JobProps>(
                         <Tags tags={Skills} />
                     </Card>
                 </div>
-                <ProjectsLG projects={Projects} show={store.show} />
+                {Projects.length ? (
+                    <ProjectsLG projects={Projects} show={store.show} />
+                ) : null}
             </div>
         )
     }
